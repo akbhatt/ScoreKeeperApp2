@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Score Keeper App 2</string>
     <string name="welcome_text">Welcome to the Score Keeper App!</string>
+    <string name="user_name_hint">Magna Sigi</string>
+    <string name="enter_name_textBox_text">Please enter your name in the box below:</string>
+    <string name="your_game_text">Your game for score keeping is Football!</string>
+    <string name="enter_team_one_name">Enter Team One Name:</string>
+    <string name="team_one_hint">England</string>
+    <string name="team_two_hint">Portugal</string>
+    <string name="enter_team_two_name">Enter Team Two Name:</string>
 </resources>
