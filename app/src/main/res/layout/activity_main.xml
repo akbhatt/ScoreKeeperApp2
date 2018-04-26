@@ -16,7 +16,10 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_text"
             android:layout_alignParentStart="true"
-            android:textSize="24sp"/>
+            android:textSize="22sp"
+            android:background="@drawable/rectangle_one"
+            android:padding="10dp"
+            android:layout_margin="5dp"/>
 
         <TextView
             android:id="@+id/enterYourNameTextView"
@@ -48,7 +51,10 @@
             android:layout_below="@id/yourGameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/rectangle_one"
+            android:padding="10dp"
+            android:layout_margin="5dp">
 
         <LinearLayout
             android:id="@+id/linearLayoutTeamOneNameHorizontal"
@@ -93,6 +99,137 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/team_two_hint"
                     android:inputType="text"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTeamsHorizontal"
+            android:layout_below="@id/linearLayoutTeamNameVertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutTeamOneVertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/teamOneText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="@string/team_one"
+                    android:textSize="30sp"/>
+
+                <TextView
+                    android:id="@+id/teamOneGoals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    android:background="@drawable/rectangle_one"
+                    android:layout_gravity="center"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/teamOneGoalText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:text="@string/team_one_goal_text"/>
+
+                <LinearLayout
+                    android:id="@+id/teamOneGoalButtonsLinearLayoutHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/plusOneGoalTeamOneButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plusSign"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/minusOneGoalTeamOneButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minusSign"
+                    android:layout_weight="1"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutTeamTwoVertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/teamTwoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="@string/team_one"
+                    android:textSize="30sp"/>
+
+                <TextView
+                    android:id="@+id/teamTwoGoals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="center"
+                    android:textSize="50sp"
+                    android:background="@drawable/rectangle_one"
+                    android:layout_gravity="center"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/teamTwoGoalText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:text="@string/team_one_goal_text"/>
+
+                <LinearLayout
+                    android:id="@+id/teamTwoGoalButtonsLinearLayoutHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/plusOneGoalTeamTwoButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/plusSign"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/minusOneGoalTeamTwoButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/minusSign"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
 
             </LinearLayout>
 

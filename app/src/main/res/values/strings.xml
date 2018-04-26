@@ -8,4 +8,9 @@
     <string name="team_one_hint">England</string>
     <string name="team_two_hint">Portugal</string>
     <string name="enter_team_two_name">Enter Team Two Name:</string>
+    <string name="team_one">Team One</string>
+    <string name="team_one_goal_text">Goal</string>
+    <string name="plusSign">+</string>
+    <string name="minusSign">-</string>
+    <string name="_0">0</string>
 </resources>
