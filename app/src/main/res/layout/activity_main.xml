@@ -8,18 +8,19 @@
     <RelativeLayout
         android:id="@+id/mainRelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#29434e">
 
         <TextView
             android:id="@+id/welcomeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_text"
             android:layout_alignParentStart="true"
-            android:textSize="22sp"
+            android:layout_margin="5dp"
             android:background="@drawable/rectangle_one"
             android:padding="10dp"
-            android:layout_margin="5dp"/>
+            android:text="@string/welcome_text"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/enterYourNameTextView"
@@ -27,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/welcomeTextView"
             android:layout_margin="5dp"
+            android:padding="1dp"
             android:text="@string/enter_name_textBox_text"
             android:textSize="20sp" />
 
@@ -48,61 +50,63 @@
             android:layout_below="@id/userNameEditText"
             android:layout_margin="5dp"
             android:freezesText="true"
+            android:padding="1dp"
             android:text="@string/your_game_text"
             android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/linearLayoutTeamNameVertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/yourGameTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_margin="5dp"
             android:background="@drawable/rectangle_one"
-            android:padding="10dp"
-            android:layout_margin="5dp">
-
-        <LinearLayout
-            android:id="@+id/linearLayoutTeamOneNameVertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1">
+            android:padding="10dp">
 
-            <TextView
-                android:id="@+id/askTeamOneNameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/enter_team_one_name"
-                android:textSize="18sp"/>
-
-            <EditText
-                android:id="@+id/teamOneNameEditText"
+            <LinearLayout
+                android:id="@+id/linearLayoutTeamOneNameVertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:freezesText="true"
-                android:hint="@string/team_one_hint"
-                android:inputType="text"/>
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/setTeamOneNameButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/save"
-                android:onClick="setTeamOne"/>
+                <TextView
+                    android:id="@+id/askTeamOneNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_team_one_name"
+                    android:textSize="18sp" />
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/teamOneNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:freezesText="true"
+                    android:hint="@string/team_one_hint"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/setTeamOneNameButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="setTeamOne"
+                    android:text="@string/save" />
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_margin="10dp"
                 android:background="#000000" />
 
             <LinearLayout
                 android:id="@+id/linearLayoutTeamTwoNameVertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/askTeamTwoNameText"
@@ -123,8 +127,8 @@
                     android:id="@+id/setTeamTwoNameButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/save"
-                    android:onClick="setTeamTwo"/>
+                    android:onClick="setTeamTwo"
+                    android:text="@string/save" />
 
             </LinearLayout>
 
@@ -132,19 +136,19 @@
 
         <LinearLayout
             android:id="@+id/linearLayoutTeamsHorizontal"
-            android:layout_below="@id/linearLayoutTeamNameVertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_below="@id/linearLayoutTeamNameVertical"
+            android:layout_margin="5dp"
             android:background="@drawable/rectangle_one"
-            android:layout_margin="5dp">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/linearLayoutTeamOneVertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/teamOneText"
@@ -153,7 +157,7 @@
                     android:freezesText="true"
                     android:text="@string/team_one"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="28sp" />
 
                 <TextView
                     android:id="@+id/teamOneGoals"
@@ -164,15 +168,15 @@
                     android:padding="5dp"
                     android:text="@string/_0"
                     android:textAlignment="center"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:id="@+id/teamOneGoalText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="@string/team_one_goal_text"
                     android:textAlignment="center"
-                    android:textSize="25sp"
-                    android:text="@string/team_one_goal_text"/>
+                    android:textSize="25sp" />
 
                 <LinearLayout
                     android:id="@+id/teamOneGoalButtonsLinearLayoutHorizontal"
@@ -203,6 +207,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="0"
                 android:background="#ff0" />
 
@@ -210,8 +215,8 @@
                 android:id="@+id/linearLayoutTeamTwoVertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/teamTwoText"
@@ -220,7 +225,7 @@
                     android:freezesText="true"
                     android:text="@string/team_one"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="28sp" />
 
                 <TextView
                     android:id="@+id/teamTwoGoals"
@@ -231,15 +236,15 @@
                     android:padding="5dp"
                     android:text="@string/_0"
                     android:textAlignment="center"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:id="@+id/teamTwoGoalText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="@string/team_one_goal_text"
                     android:textAlignment="center"
-                    android:textSize="25sp"
-                    android:text="@string/team_one_goal_text"/>
+                    android:textSize="25sp" />
 
                 <LinearLayout
                     android:id="@+id/teamTwoGoalButtonsLinearLayoutHorizontal"
@@ -279,6 +284,15 @@
             android:onClick="resetClick"
             android:text="@string/reset" />
 
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resetButton"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:onClick="shareClick"
+            android:text="@string/share" />
 
     </RelativeLayout>
 
