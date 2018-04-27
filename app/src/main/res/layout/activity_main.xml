@@ -23,28 +23,33 @@
 
         <TextView
             android:id="@+id/enterYourNameTextView"
-            android:layout_below="@id/welcomeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/welcomeTextView"
+            android:layout_margin="5dp"
             android:text="@string/enter_name_textBox_text"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/userNameEditText"
-            android:layout_below="@id/enterYourNameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/enterYourNameTextView"
+            android:layout_margin="5dp"
+            android:freezesText="true"
             android:hint="@string/user_name_hint"
             android:inputType="textPersonName"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/yourGameTextView"
-            android:layout_below="@id/userNameEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/userNameEditText"
+            android:layout_margin="5dp"
+            android:freezesText="true"
             android:text="@string/your_game_text"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/linearLayoutTeamNameVertical"
@@ -57,10 +62,10 @@
             android:layout_margin="5dp">
 
         <LinearLayout
-            android:id="@+id/linearLayoutTeamOneNameHorizontal"
+            android:id="@+id/linearLayoutTeamOneNameVertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_weight="1">
 
             <TextView
@@ -68,22 +73,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/enter_team_one_name"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <EditText
                 android:id="@+id/teamOneNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:freezesText="true"
                 android:hint="@string/team_one_hint"
                 android:inputType="text"/>
 
+            <Button
+                android:id="@+id/setTeamOneNameButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:onClick="setTeamOne"/>
+
         </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000" />
+
             <LinearLayout
-                android:id="@+id/linearLayoutTeamTwoNameHorizontal"
+                android:id="@+id/linearLayoutTeamTwoNameVertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_weight="1">
 
                 <TextView
@@ -97,8 +115,16 @@
                     android:id="@+id/teamTwoNameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:freezesText="true"
                     android:hint="@string/team_two_hint"
-                    android:inputType="text"/>
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/setTeamTwoNameButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:onClick="setTeamTwo"/>
 
             </LinearLayout>
 
@@ -109,7 +135,9 @@
             android:layout_below="@id/linearLayoutTeamNameVertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/rectangle_one"
+            android:layout_margin="5dp">
 
             <LinearLayout
                 android:id="@+id/linearLayoutTeamOneVertical"
@@ -122,20 +150,21 @@
                     android:id="@+id/teamOneText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
+                    android:freezesText="true"
                     android:text="@string/team_one"
-                    android:textSize="30sp"/>
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/teamOneGoals"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:freezesText="true"
+                    android:padding="5dp"
                     android:text="@string/_0"
                     android:textAlignment="center"
-                    android:textSize="50sp"
-                    android:background="@drawable/rectangle_one"
-                    android:layout_gravity="center"
-                    android:padding="5dp"/>
+                    android:textSize="50sp" />
 
                 <TextView
                     android:id="@+id/teamOneGoalText"
@@ -151,19 +180,21 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/plusOneGoalTeamOneButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/plusSign"
-                    android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/plusOneGoalTeamOneButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="plusTeamOne"
+                        android:text="@string/plusSign" />
 
-                <Button
-                    android:id="@+id/minusOneGoalTeamOneButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/minusSign"
-                    android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/minusOneGoalTeamOneButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="minusTeamOne"
+                        android:text="@string/minusSign" />
 
                 </LinearLayout>
 
@@ -173,7 +204,7 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:background="@android:color/darker_gray" />
+                android:background="#ff0" />
 
             <LinearLayout
                 android:id="@+id/linearLayoutTeamTwoVertical"
@@ -186,20 +217,21 @@
                     android:id="@+id/teamTwoText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
+                    android:freezesText="true"
                     android:text="@string/team_one"
-                    android:textSize="30sp"/>
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/teamTwoGoals"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:freezesText="true"
+                    android:padding="5dp"
                     android:text="@string/_0"
                     android:textAlignment="center"
-                    android:textSize="50sp"
-                    android:background="@drawable/rectangle_one"
-                    android:layout_gravity="center"
-                    android:padding="5dp"/>
+                    android:textSize="50sp" />
 
                 <TextView
                     android:id="@+id/teamTwoGoalText"
@@ -219,21 +251,33 @@
                         android:id="@+id/plusOneGoalTeamTwoButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/plusSign"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:onClick="plusTeamTwo"
+                        android:text="@string/plusSign" />
 
                     <Button
                         android:id="@+id/minusOneGoalTeamTwoButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/minusSign"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:onClick="minusTeamTwo"
+                        android:text="@string/minusSign" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayoutTeamsHorizontal"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:onClick="resetClick"
+            android:text="@string/reset" />
 
 
     </RelativeLayout>
